@@ -8,8 +8,6 @@ import QtQuick.Window 2.2
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.components 2.0 as PlasmaComponents
 
-
-
 RowLayout{
     id:main
 
@@ -119,9 +117,3 @@ RowLayout{
     }
 }
 
-
-/*##^##
-Designer {
-    D{i:0;autoSize:true;height:480;width:640}
-}
-##^##*/

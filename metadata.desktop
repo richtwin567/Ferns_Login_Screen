@@ -10,6 +10,5 @@ Screenshot=Previews/preview.png
 MainScript=Main.qml
 ConfigFile=theme.conf
 TranslationsDirectory=translations
-Email=anakai.richards@gmail.com
 Theme-Id=ferns
 Theme-API=2.12
