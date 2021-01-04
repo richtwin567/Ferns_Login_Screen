@@ -67,6 +67,7 @@ RowLayout{
                     Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
                     Layout.preferredHeight: 40
                     Keys.onEnterPressed: main.login();
+                    Keys.onReturnPressed: main.login();
                     loginFailed: main.loginFailed
 
                 }
@@ -80,6 +81,7 @@ RowLayout{
                     fieldFilled: password.filledText
                     onClicked: main.login();
                     Keys.onEnterPressed: main.login();
+                    Keys.onReturnPressed: main.login();
                 }
             }
 

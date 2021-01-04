@@ -119,16 +119,6 @@ RowLayout{
                 source: "../assets/caps_lock_incorrect.svgz"
                 opacity: 1
             }
-        },
-        State {
-            name: "capslockon"
-            when: keyboard.capsLock
-
-            PropertyChanges {
-                target: capsLockIcon
-                source: "../assets/caps_lock_nofocus.svgz"
-                opacity: 1
-            }
         }
     ]
     transitions: [
