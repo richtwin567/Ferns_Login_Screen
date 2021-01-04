@@ -78,7 +78,7 @@ RowLayout{
         },
         State {
             name: "incorrectNoCaps"
-            when: passwordInput.loginFailed && !keyboard.capsLock
+            when: (passwordInputField.activeFocus && !keyboard.capsLock && passwordInput.loginFailed) || (!passwordInputField.activeFocus && !keyboard.capsLock && passwordInput.loginFailed)
 
             PropertyChanges {
                 target: passwordInputLeftBorder
@@ -97,7 +97,7 @@ RowLayout{
         },
         State {
             name: "incorrectCaps"
-            when: passwordInput.loginFailed && !keyboard.capsLock
+            when: (passwordInputField.activeFocus && keyboard.capsLock && passwordInput.loginFailed)||(!passwordInputField.activeFocus && keyboard.capsLock && passwordInput.loginFailed)
 
             PropertyChanges {
                 target: passwordInputLeftBorder
@@ -117,6 +117,16 @@ RowLayout{
             PropertyChanges {
                 target: capsLockIcon
                 source: "../assets/caps_lock_incorrect.svgz"
+                opacity: 1
+            }
+        },
+        State {
+            name: "noFocusCaps"
+            when: !passwordInputField.activeFocus && keyboard.capsLock && !passwordInput.loginFailed
+
+            PropertyChanges {
+                target: capsLockIcon
+                source: "../assets/caps_lock_nofocus.svgz"
                 opacity: 1
             }
         }
