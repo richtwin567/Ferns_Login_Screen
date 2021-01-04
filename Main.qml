@@ -13,12 +13,13 @@ RowLayout{
 
     property bool loginFailed: false
 
-    spacing: -1
+    spacing: 0
     anchors.fill: parent
     FeatureImage{
         Layout.preferredHeight: 1;
-        Layout.preferredWidth: (Screen.width* 0.55) +1
+        Layout.preferredWidth: Screen.width* 0.55
         Layout.fillHeight: true;
+        Layout.fillWidth: true;
         fillMode: Image.PreserveAspectCrop
     }
     Panel{
