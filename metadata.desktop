@@ -1,0 +1,15 @@
+[SddmGreeterTheme]
+Name=Ferns
+Description=Nature
+Author=Anakai Richards
+Copyright=Copyright (C) 2020 Anakai Richards
+License=GPL-3.0-or-later
+Type=sddm-theme
+Version=1.0
+Screenshot=Previews/preview.png
+MainScript=Main.qml
+ConfigFile=theme.conf
+TranslationsDirectory=translations
+Email=anakai.richards@gmail.com
+Theme-Id=ferns
+Theme-API=2.12

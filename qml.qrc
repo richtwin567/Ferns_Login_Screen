@@ -1,0 +1,17 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Main.qml</file>
+        <file>Components/PasswordInput.qml</file>
+        <file>Components/Panel.qml</file>
+        <file>Components/FeatureImage.qml</file>
+        <file>Components/PoiretOneFontLoader.qml</file>
+        <file>Components/RalewayFontLoader.qml</file>
+        <file>Components/LoginButton.qml</file>
+        <file>Components/ClockText.qml</file>
+        <file>Components/UserWelcomeText.qml</file>
+        <file>Components/ControlBar.qml</file>
+        <file>Components/ClockRings.qml</file>
+        <file>Components/Clock.qml</file>
+        <file>Components/SystemControlsModel.qml</file>
+    </qresource>
+</RCC>
