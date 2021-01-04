@@ -131,6 +131,7 @@ RowLayout{
             }
         }
     ]
+    
     transitions: [
 
         Transition {
@@ -210,7 +211,6 @@ RowLayout{
             opacity: 0
         }
     }
-
 
     Rectangle{
         id: passwordInputRightBorder

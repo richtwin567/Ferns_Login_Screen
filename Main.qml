@@ -108,13 +108,18 @@ RowLayout{
         }
         onLoginFailed: {
             loginFailed = true
-            resetError.running ? resetError.stop() && resetError.start() : resetError.start()
+            if(resetError.running){
+                resetError.stop();
+                resetError.start();
+            else{
+                resetError.start();
+            }
         }
     }
 
     Timer {
         id: resetError
-        interval: 2000
+        interval: 4000
         onTriggered: loginFailed = false
         running: false
     }
