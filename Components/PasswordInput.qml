@@ -131,7 +131,7 @@ RowLayout{
             }
         }
     ]
-    
+
     transitions: [
 
         Transition {
@@ -153,11 +153,9 @@ RowLayout{
         }
     ]
 
-    Column{
+    Item{
         id: stack
-        width: 200
-        height: 400
-        spacing: 0
+        height: 40
         Layout.fillHeight: true
         Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
         Layout.fillWidth: true
@@ -177,11 +175,8 @@ RowLayout{
             }
 
             color: "#1C2E1E"
+            anchors.fill: parent
             rightPadding: 48
-            anchors.right: parent.right
-            anchors.rightMargin: 0
-            anchors.left: parent.left
-            anchors.leftMargin: 0
             padding: 8
             passwordMaskDelay: 500
             renderType: Text.QtRendering
@@ -202,7 +197,7 @@ RowLayout{
             anchors.leftMargin: -36
             anchors.left: passwordInputField.right
             antialiasing: true
-            z: 16.848
+            z: 15
             mipmap: true
             anchors.verticalCenter: passwordInputField.verticalCenter
             sourceSize: Qt.size(36,36)
