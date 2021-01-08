@@ -1,6 +1,8 @@
 import QtQuick 2.12
 
 Canvas{
+    id: clockRings
+
     property real canvasHeight
     property real canvasWidth
     property real minuteRadians: 0
@@ -8,11 +10,11 @@ Canvas{
     property real ninetyDegrees: 90*(Math.PI/180)
     property real thirtyDegrees: 30*(Math.PI/180)
 
-    id: clockRings
     width: canvasHeight > canvasWidth? canvasHeight : canvasWidth
     height:canvasHeight > canvasWidth? canvasHeight : canvasWidth
 
     contextType: qsTr("2d")
+    
     onPaint: {
         var ctx = getContext("2d");
         context.clearRect(0, 0, width, height);
@@ -35,7 +37,6 @@ Canvas{
         ctx.arc(x,y, radius, -0.5*Math.PI, minuteRadians);
 
         ctx.stroke();
-
     }
 
     function updateHourArc(){
@@ -45,6 +46,10 @@ Canvas{
             hour-=12;
         }
         var radians;
+        const currentMinute = date.getMinutes();
+        const minuteDegrees =  (currentMinute/60)*30;
+        const minuteRadians = minuteDegrees * (Math.PI/180);
+        
         switch(hour){
         case 0:
         case 12:
@@ -86,21 +91,23 @@ Canvas{
         default:
             radians = thirtyDegrees;
         }
-        hourRadians = -ninetyDegrees + radians;
-
+        hourRadians = -ninetyDegrees + radians + minuteRadians;
     }
+
     function updateMinuteArc(){
         const date = new Date();
         const currentMinute = date.getMinutes();
-        const degrees =  (currentMinute/60)*360;
-        const radians = degrees * (Math.PI/180);
-        minuteRadians =  -ninetyDegrees + radians;
-
+        const currentSecond =  date.getSeconds();
+        const secDegrees = (currentSecond/60)*6;
+        const secRadians = secDegrees* (Math.PI/180);
+        const minuteDegrees =  (currentMinute/60)*360;
+        const radians = minuteDegrees * (Math.PI/180);
+        minuteRadians =  -ninetyDegrees + radians + secRadians;
     }
 
     Timer{
         id: time
-        interval: 1000
+        interval: 1
         repeat: true
         running: true
         onTriggered: {
