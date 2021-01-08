@@ -19,12 +19,27 @@ Row{
 
     ComboBox{
         id: userText
+
         flat: true
         model: userModel
         currentIndex: userModel.lastIndex
         font.family: raleway.name
-
         textRole: "name"
+
+        popup:  Popup {
+            y: userText.height
+            width: userText.width
+            padding: 0
+        
+            contentItem: ListView {
+                clip: true
+                implicitHeight: contentHeight
+                model: userText.popup.visible ? userText.delegateModel : null
+                currentIndex: userText.highlightedIndex
+            
+                ScrollIndicator.vertical: ScrollIndicator { }
+            }
+        }
 
         delegate: ItemDelegate{
             width: parent.width
